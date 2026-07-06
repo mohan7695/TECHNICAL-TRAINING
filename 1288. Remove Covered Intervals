@@ -1,0 +1,21 @@
+class Solution {
+    public int removeCoveredIntervals(int[][] intervals) {
+        Arrays.sort(intervals,(m,n)->{
+            if(m[0]==n[0]){
+                return n[1]-m[1];
+            }
+            return m[0]-n[0];
+        });
+
+        int count=0;
+        int max=-1;
+
+        for(int[] interval:intervals){
+            if(interval[1]>max){
+                max=interval[1];
+                count++;
+            }
+        }
+       return count++;
+    }
+}
