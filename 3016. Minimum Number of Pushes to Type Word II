@@ -1,4 +1,27 @@
- int[] arr = new int[26];
+class Solution {
+    public int minimumPushes(String word) {
+        // Map<Character, Integer> map = new HashMap<>();
+        // for (char ch : word.toCharArray()) {
+        //     map.put(ch, map.getOrDefault(ch, 0) + 1);
+        // }
+        // int sum = 0;
+        // int fre = 1;
+        // List<Map.Entry<Character, Integer>> list = new ArrayList<>(map.entrySet());
+        // list.sort((a, b) -> b.getValue().compareTo(a.getValue()));
+
+        // int count = 0;
+        // for (int i = 0; i < list.size(); i++) {
+        //     sum = sum + fre * list.get(i).getValue();
+        //     count++;
+
+        //     if (count % 8 == 0) {
+        //         fre++;
+        //     }
+        // }
+
+        // return sum;
+
+int[] arr = new int[26];
         for (char ch : word.toCharArray()) {
             arr[ch - 'a']++;
         }
