@@ -1,0 +1,24 @@
+class Solution {
+    public int arrangeCoins(int n) {
+        int count = 0;
+        long ans = 0;
+        long low = 1;
+        long right = n;
+        while (low <= right) {
+
+            long mid = (low + right) / 2;
+
+            long sum = mid * (mid + 1) / 2;
+
+            if (sum <= n) {
+                ans = mid;
+                low = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+
+        }
+        return (int) ans;
+
+    }
+}
