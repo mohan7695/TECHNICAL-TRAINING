@@ -1,0 +1,28 @@
+class Solution {
+    public int missingInteger(int[] nums) {
+
+        int count = nums[0];
+        int sum = nums[0];
+        int n = nums.length;
+
+        for (int i = 1; i < n; i++) {
+
+            if (sum + 1 == nums[i]) {
+                count += nums[i];
+                sum = nums[i];
+            } else {
+                //count +=nums[i];
+                break;
+            }
+
+        }
+        Set<Integer> set = new HashSet<>();
+        for (int k : nums) {
+            set.add(k);
+        }
+       while (set.contains(count)) {
+            count++;
+        }
+        return count;
+    }
+}
