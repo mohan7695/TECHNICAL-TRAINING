@@ -1,0 +1,20 @@
+class Solution {
+    public int areaOfMaxDiagonal(int[][] dimensions) {
+       double total = 0;
+        int index = 0;
+
+        for (int[] dimen : dimensions) {
+            int first = dimen[0];
+            int seconf = dimen[1];
+            int f = first * seconf;
+            double diagonal = Math.sqrt(first * first+seconf * seconf);
+            if (diagonal > total) {
+                 total = diagonal;
+                 index=f;
+            } else if (diagonal == total) {
+                index=Math.max(f,index);
+            }
+        }
+        return index;
+    }
+}
