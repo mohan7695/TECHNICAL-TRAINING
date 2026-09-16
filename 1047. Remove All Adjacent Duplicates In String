@@ -1,0 +1,19 @@
+class Solution {
+    public String removeDuplicates(String s) {
+        // LinkedHashSet<Character> list=new LinkedHashSet<>();
+        Stack<Character> stack = new Stack<>();
+        stack.add(s.charAt(0));
+        for (int i = 1; i < s.length(); i++) {
+            if (!stack.isEmpty() && stack.peek() == s.charAt(i)) {
+                stack.pop();
+            } else {
+                stack.add(s.charAt(i));
+            }
+        }
+        StringBuilder g = new StringBuilder();
+        while (!stack.isEmpty()) {
+            g.append(stack.pop());
+        }
+        return g.reverse().toString();
+    }
+}
