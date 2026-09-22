@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isSorted(int[] arr) {
+        // code here
+               return search(arr,0);
+        }
+       
+    
+    public static boolean search(int[] arr,int count){
+        
+        if(count == arr.length-1){
+            return true;
+        }
+        
+        return arr[count]  <= arr[count+1] && search(arr,count+1);
+    }
+}
