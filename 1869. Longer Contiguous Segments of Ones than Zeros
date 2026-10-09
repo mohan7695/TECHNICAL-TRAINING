@@ -1,0 +1,22 @@
+class Solution {
+    public boolean checkZeroOnes(String s) {
+        int zero=0;
+        int onecount=0;
+int max=0;
+int maxzero=0;
+        for(char ch : s.toCharArray()){
+            if(ch == '1'){
+                onecount++;
+                max=Math.max(onecount,max);
+                zero=0;
+            }
+            else{
+                onecount=0;
+                zero++;
+                maxzero=Math.max(zero,maxzero);
+            }
+           
+        }
+        return max > maxzero;
+    }
+}
