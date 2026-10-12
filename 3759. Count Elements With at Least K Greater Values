@@ -1,0 +1,17 @@
+class Solution {
+    public int countElements(int[] nums, int k) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        int sum = 0;
+        if ( k==0) {
+            return n;
+        }
+        int th = nums[n-k];
+        for (int i  : nums) {
+            if (i <  th) {
+                sum++;
+            }
+        }
+        return sum;
+    }
+}
